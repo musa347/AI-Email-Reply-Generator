@@ -1,7 +1,8 @@
 Email Writer Assistance
 
-<img width="1920" alt="Screenshot 2025-03-13 at 14 28 13" src="https://github.com/user-attachments/assets/c45a870c-215b-44a2-8cd4-3a4bbef18afb" />
+
 Overview
+<img width="1897" alt="Screenshot 2025-03-13 at 14 35 59" src="https://github.com/user-attachments/assets/7a3e57fd-b69c-459a-8164-74289a91f589" />
 
 
 Email Writer Assistance is an AI-powered tool designed to generate professional email replies using the Gemini API. The backend is built with Spring Boot, and the tool integrates with Gmail to provide AI-generated responses directly in the compose window.
