@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @Slf4j
 @CrossOrigin(origins = "*")
@@ -18,12 +20,13 @@ public class EmailGeneratorController {
     @Autowired
     public EmailGeneratorController(EmailGeneratorService emailGeneratorService) {
         this.emailGeneratorService = emailGeneratorService;
-        log.info("✅ EmailGeneratorController Initialized with: " + emailGeneratorService);
+        log.info("✔ EmailGeneratorController Initialized with: " + emailGeneratorService);
     }
 
     @PostMapping("/generate")
-    public ResponseEntity<String> generateEmail(@RequestBody EmailRequest emailRequest) {
+    public ResponseEntity<Map<String, String>> generateEmail(@RequestBody EmailRequest emailRequest) {
         String response = emailGeneratorService.generateEmailReply(emailRequest);
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(Map.of("reply", response));  // Wrap in JSON
     }
+
 }
